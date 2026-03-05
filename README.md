@@ -8,7 +8,9 @@ A modern, responsive portfolio website built with React and Vite, showcasing pro
 
 ## 📸 Preview
 
-[![Portfolio Preview](/screenshots/homepage-1.jpeg)](https://subrat-portfollio.vercel.app/)
+![Portfolio Preview](public/screenshots/homepage-1.jpeg)
+
+**Click to view live portfolio:** [https://subrat-portfollio.vercel.app/](https://subrat-portfollio.vercel.app/)
 
 ## ✨ Features
 
