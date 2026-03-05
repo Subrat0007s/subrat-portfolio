@@ -3,7 +3,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
-import { Link, useLocation } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
 import { ImBlog } from "react-icons/im";
 import {
@@ -13,13 +12,11 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import { MdContactMail } from "react-icons/md";
-
 import { CgFileDocument } from "react-icons/cg";
 
-function NavBar() {
+function NavBar({ currentPage, setCurrentPage }) {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
-  const location = useLocation();
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -31,8 +28,15 @@ function NavBar() {
 
   window.addEventListener("scroll", scrollHandler);
 
-  const isActive = (path) => {
-    return location.pathname === path;
+  const handleNavClick = (page) => {
+    setCurrentPage(page);
+    updateExpanded(false);
+    // Keep URL as root
+    window.history.pushState({}, "", "/");
+  };
+
+  const isActive = (page) => {
+    return currentPage === page;
   };
 
   return (
@@ -43,7 +47,14 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
+        <Navbar.Brand
+          href="/"
+          className="d-flex"
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick("home");
+          }}
+        >
           <span
             className="logo monoton-regular"
             style={{
@@ -73,10 +84,8 @@ function NavBar() {
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
               <Nav.Link
-                as={Link}
-                to="/"
-                onClick={() => updateExpanded(false)}
-                className={isActive("/") ? "active" : ""}
+                onClick={() => handleNavClick("home")}
+                className={isActive("home") ? "active" : ""}
               >
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
@@ -84,10 +93,8 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
-                className={isActive("/about") ? "active" : ""}
+                onClick={() => handleNavClick("about")}
+                className={isActive("about") ? "active" : ""}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
@@ -95,10 +102,8 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link
-                as={Link}
-                to="/project"
-                onClick={() => updateExpanded(false)}
-                className={isActive("/project") ? "active" : ""}
+                onClick={() => handleNavClick("project")}
+                className={isActive("project") ? "active" : ""}
               >
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
@@ -109,10 +114,8 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link
-                as={Link}
-                to="/resume"
-                onClick={() => updateExpanded(false)}
-                className={isActive("/resume") ? "active" : ""}
+                onClick={() => handleNavClick("resume")}
+                className={isActive("resume") ? "active" : ""}
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
               </Nav.Link>
@@ -120,10 +123,8 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link
-                as={Link}
-                to="/contact"
-                onClick={() => updateExpanded(false)}
-                className={isActive("/contact") ? "active" : ""}
+                onClick={() => handleNavClick("contact")}
+                className={isActive("contact") ? "active" : ""}
               >
                 <MdContactMail style={{ marginBottom: "2px" }} /> Contact
               </Nav.Link>
@@ -131,10 +132,8 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link
-                as={Link}
-                to="/blog"
-                onClick={() => updateExpanded(false)}
-                className={isActive("/blog") ? "active" : ""}
+                onClick={() => handleNavClick("blog")}
+                className={isActive("blog") ? "active" : ""}
               >
                 <ImBlog style={{ marginBottom: "2px" }} /> Blog
               </Nav.Link>

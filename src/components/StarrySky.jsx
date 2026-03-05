@@ -155,11 +155,20 @@ function StarrySky() {
               position: "absolute",
               top: "20%",
               left: "-150px",
-              fontSize: "60px",
+              width: "80px",
+              height: "40px",
               animation: "cloudFloatLeftToRight 25s linear infinite",
             }}
           >
-            ☁️
+            <img
+              src="/cloud.gif"
+              alt="cloud"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+              }}
+            />
           </div>
           <div
             className="cloud"
@@ -167,11 +176,20 @@ function StarrySky() {
               position: "absolute",
               top: "40%",
               right: "-120px",
-              fontSize: "50px",
+              width: "70px",
+              height: "35px",
               animation: "cloudFloatRightToLeft 30s linear infinite",
             }}
           >
-            ☁️
+            <img
+              src="/cloud.gif"
+              alt="cloud"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+              }}
+            />
           </div>
           <div
             className="cloud"
@@ -179,12 +197,21 @@ function StarrySky() {
               position: "absolute",
               top: "15%",
               left: "-180px",
-              fontSize: "70px",
+              width: "90px",
+              height: "45px",
               animation: "cloudFloatLeftToRight 35s linear infinite",
               animationDelay: "5s",
             }}
           >
-            ☁️
+            <img
+              src="/cloud.gif"
+              alt="cloud"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+              }}
+            />
           </div>
           <div
             className="cloud"
@@ -192,12 +219,21 @@ function StarrySky() {
               position: "absolute",
               top: "60%",
               right: "-100px",
-              fontSize: "55px",
+              width: "75px",
+              height: "38px",
               animation: "cloudFloatRightToLeft 28s linear infinite",
               animationDelay: "8s",
             }}
           >
-            ☁️
+            <img
+              src="/cloud.gif"
+              alt="cloud"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+              }}
+            />
           </div>
           <div
             className="cloud"
@@ -205,12 +241,21 @@ function StarrySky() {
               position: "absolute",
               top: "35%",
               left: "-200px",
-              fontSize: "45px",
+              width: "65px",
+              height: "32px",
               animation: "cloudFloatLeftToRight 32s linear infinite",
               animationDelay: "12s",
             }}
           >
-            💨
+            <img
+              src="/cloud.gif"
+              alt="cloud"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+              }}
+            />
           </div>
         </>
       )}
@@ -224,12 +269,21 @@ function StarrySky() {
               position: "absolute",
               top: "25%",
               left: "-150px",
-              fontSize: "60px",
+              width: "70px",
+              height: "35px",
               opacity: "0.6",
               animation: "cloudFloatLeftToRight 30s linear infinite",
             }}
           >
-            ☁️
+            <img
+              src="/cloud.gif"
+              alt="cloud"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+              }}
+            />
           </div>
           <div
             className="cloud"
@@ -237,13 +291,22 @@ function StarrySky() {
               position: "absolute",
               top: "45%",
               right: "-120px",
-              fontSize: "50px",
+              width: "60px",
+              height: "30px",
               opacity: "0.5",
               animation: "cloudFloatRightToLeft 35s linear infinite",
               animationDelay: "10s",
             }}
           >
-            ☁️
+            <img
+              src="/cloud.gif"
+              alt="cloud"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+              }}
+            />
           </div>
         </>
       )}

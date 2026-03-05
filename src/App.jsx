@@ -9,47 +9,56 @@ import Resume from "./components/Resume/ResumeNew";
 import Contact from "./components/Contact";
 import Blog from "./components/Blog";
 import StarrySky from "./components/StarrySky";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
 import "./App.css";
+import "./mobile-responsive.css";
+import "./fixes.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [load, upadateLoad] = useState(true);
+  const [currentPage, setCurrentPage] = useState("home");
 
   useEffect(() => {
     const timer = setTimeout(() => {
       upadateLoad(false);
     }, 1200);
 
+    // Keep URL as root
+    if (window.location.pathname !== "/") {
+      window.history.pushState({}, "", "/");
+    }
+
     return () => clearTimeout(timer);
   }, []);
 
+  const renderPage = () => {
+    switch (currentPage) {
+      case "home":
+        return <Home />;
+      case "about":
+        return <About />;
+      case "project":
+        return <Projects />;
+      case "resume":
+        return <Resume />;
+      case "contact":
+        return <Contact />;
+      case "blog":
+        return <Blog />;
+      default:
+        return <Home />;
+    }
+  };
+
   return (
-    <Router>
+    <div className="App" id={load ? "no-scroll" : "scroll"}>
       <Preloader load={load} />
       <StarrySky />
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/project" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+      <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <div className="page-content">{renderPage()}</div>
+      <Footer />
+    </div>
   );
 }
 

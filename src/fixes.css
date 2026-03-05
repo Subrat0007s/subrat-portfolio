@@ -1,0 +1,239 @@
+/* Bug Fixes for Portfolio */
+
+/* Fix 1: Navbar font color when scrolling */
+.sticky .navbar-nav .nav-link {
+  color: white !important;
+}
+
+.sticky .navbar-brand {
+  color: white !important;
+}
+
+/* Fix 2: Consistent font sizes across all pages */
+/* Standardize heading sizes */
+.heading {
+  font-size: 2.2em !important;
+  padding-left: 50px !important;
+}
+
+.heading-name {
+  font-size: 2.3em !important;
+  padding-left: 45px !important;
+}
+
+.project-heading {
+  font-size: 2.2em !important;
+  font-weight: 500 !important;
+  padding-top: 10px !important;
+  color: white !important;
+}
+
+.resume .resume-title {
+  font-size: 2.2em !important;
+  font-weight: 700 !important;
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+}
+
+/* Standardize paragraph sizes */
+.home-about-body {
+  padding-top: 50px !important;
+  font-size: 1.1em !important;
+  text-align: left !important;
+}
+
+.resume-body p {
+  font-size: 1.1em !important;
+  margin-bottom: 20px !important;
+  text-align: justify !important;
+}
+
+/* Standardize typewriter effect */
+.Typewriter__wrapper {
+  font-size: 2.2em !important;
+  color: #be6adf !important;
+  font-weight: 600 !important;
+}
+
+.Typewriter__cursor {
+  font-size: 2.2em !important;
+  color: #b562d6 !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 767px) {
+  .Typewriter__wrapper {
+    font-size: 1.4em !important;
+    font-weight: 500 !important;
+    position: absolute !important;
+  }
+
+  .Typewriter__cursor {
+    font-size: 1.4em !important;
+  }
+
+  .heading {
+    font-size: 1.8em !important;
+    padding-left: 20px !important;
+  }
+
+  .heading-name {
+    font-size: 1.9em !important;
+    padding-left: 15px !important;
+  }
+
+  .project-heading {
+    font-size: 1.8em !important;
+  }
+
+  .resume .resume-title {
+    font-size: 1.8em !important;
+  }
+}
+
+/* Fix 3: Ensure navbar brand color consistency */
+.navbar-brand {
+  color: rgb(250, 250, 250) !important;
+  transition: color 0.3s ease !important;
+}
+
+.navbar-brand:hover {
+  color: #be50f4 !important;
+}
+
+/* Fix 4: Consistent button sizes */
+.tech-icons {
+  font-size: 1rem !important;
+  margin: 15px !important;
+  padding: 10px 20px !important;
+  opacity: 0.93 !important;
+  border: 2px solid #6c63ff !important;
+  border-radius: 8px !important;
+  color: white !important;
+  background-color: transparent !important;
+  display: flex !important;
+  align-self: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Fix 5: Resume section consistency */
+.resume .resume-item .resume-title {
+  line-height: 18px !important;
+  font-size: 1em !important;
+  background: #5234795d !important;
+  padding: 8px 15px !important;
+  display: inline-block !important;
+  margin-bottom: 10px !important;
+  border-radius: 4px !important;
+}
+
+/* Fix 6: Social links consistency */
+.home-about-social {
+  text-align: center !important;
+  padding-top: 25px !important;
+  color: white !important;
+}
+
+.social-icon {
+  width: 40px !important;
+  height: 40px !important;
+  text-align: center !important;
+  font-size: 1.2em !important;
+  line-height: 2em !important;
+  background: rgba(255, 255, 255, 0.972) !important;
+  border-radius: 50% !important;
+  transition: all 0.3s ease !important;
+  color: #000 !important;
+}
+
+/* Fix 7: Footer consistency */
+.footer h3 {
+  font-size: 1em !important;
+  color: white !important;
+  margin-top: 0.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* Fix 8: Blog card consistency */
+.blog-card-view {
+  background-color: transparent !important;
+  box-shadow: 0 3px 3px 2px rgba(145, 77, 161, 0.459) !important;
+  color: white !important;
+  transition: all 0.5s ease 0s !important;
+  height: 100% !important;
+  border-radius: 8px !important;
+}
+
+.blog-link {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+/* Fix 9: Project card consistency */
+.project-card-view {
+  box-shadow: 0 4px 5px 3px rgba(119, 53, 136, 0.459) !important;
+  color: white !important;
+  background-color: transparent !important;
+  opacity: 0.9 !important;
+  transition: all 0.5s ease 0s !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(255, 255, 255, 0.125) !important;
+}
+
+/* Fix 10: Contact form consistency */
+.contact-form {
+  padding-top: 110px !important;
+  padding-bottom: 30px !important;
+  background: transparent !important;
+  color: white !important;
+}
+
+/* Fix 11: Like items consistency */
+.like-item {
+  padding-top: 10px !important;
+  font-size: 1.1em !important;
+  font-family: sans-serif !important;
+}
+
+/* Fix 12: Fork button consistency */
+.fork-btn {
+  font-size: 1.1em !important;
+  padding-top: 10px !important;
+}
+
+/* Fix 13: Quote card consistency */
+.quote-card-view {
+  border: none !important;
+  color: white !important;
+  background-color: transparent !important;
+  border-radius: 8px !important;
+}
+
+/* Fix 14: Page content scrolling */
+.page-content {
+  min-height: 100vh !important;
+  scroll-behavior: smooth !important;
+}
+
+/* Fix 15: Active navigation state */
+.nav-link.active {
+  color: #be50f4 !important;
+  font-weight: 600 !important;
+}
+
+/* Fix 16: Smooth page transitions */
+.page-content > * {
+  animation: fadeIn 0.5s ease-in-out !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0 !important;
+    transform: translateY(20px) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
